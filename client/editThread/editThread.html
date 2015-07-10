@@ -1,0 +1,10 @@
+<template name="editThread">
+  {{title}}
+  Edit Thread
+  <button class="delete-thread">Delete</button>
+  <form class="edit-thread-form">
+    <input name="editThreadTitle" class="edit-thread-title" type="text" placeholder="Title" value="{{title}}">
+    <textarea name="editThreadContent" class="edit-thread-content" placeholder="content" value="{{content}}"></textarea>
+    <button class="edit-thread-submit" type="submit">Submit</button>
+  </form>
+</template>
