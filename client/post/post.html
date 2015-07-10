@@ -1,9 +1,17 @@
 <template name="post">
-  <div class="post-container">
-    <div class="post-header card">{{createdAt}}</div>
-    <div class="floatLeft">
-      <div class="post-user card">{{author}}</div>
-    </div>
-    <div class="post-content card">{{content}}</div>
+  <div class="post-container card grey lighten-4">
+    <div class="post-header red lighten-3">{{createdAt}}</div>
+    <table>
+      <tr class="post-tr">
+        <td class="post-user-td grey lighten-3">
+          <div class="post-user">{{author}}</div>
+        </td>
+        <td class="post-content-td  grey lighten-5">
+          <div class="post-content">
+          {{content}}
+          </div>
+        </td>
+      </tr>
+    </table>
   </div>
 </template>

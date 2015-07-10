@@ -1,21 +1,33 @@
-.post-header {
-  margin-bottom: 0;
+.post-container {
+  padding-bottom: 20px;
   margin-top: 10px;
 }
 
-.floatLeft {
-  float: left;
-}
-
-.floatLeft div {
-  float: left;
+.post-header {
+  margin-bottom: 0;
 }
 
 .post-user {
-  width: 200px;
   margin: 0;
+  height: auto;
+  padding: 5px;
 }
 
+.post-user-td {
+  width: 200px;
+  min-width: 200px;
+  padding: 0;
+  vertical-align: top;
+}
 .post-content {
   margin: 0;
+  padding-bottom: 20px;
+  padding-top: 3px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+.post-content-td {
+  padding: 0;
+  vertical-align: top;
 }
