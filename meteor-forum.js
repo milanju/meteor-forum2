@@ -1,18 +1,54 @@
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
+  Template.newThread.helpers({
 
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  });
+
+  Template.newThread.events({
+    'submit #new-thread': function(event) {
+      console.log(event);
+
+      var userId = Meteor.userId();
+      var author = Meteor.user().username;
+      var createdAt = new Date();
+      var title = event.target[0].value;
+      var content = event.target[1].value;
+      Threads.insert({
+        userId: userId,
+        author: author,
+        createdAt: createdAt,
+        title: title,
+        content: content})
+      return false;
     }
   });
 
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
+  Template.home.helpers({
+    'threads': function() {
+      return Threads.find();
+    },
+    'threadPosts': function() {
+      return Posts.find({threadId: this._id}).fetch().length;
+    },
+    'activeThread': function() {
+      return Session.get("activeThread");
     }
+  });
+
+  Template.home.events({
+    'click .thread-row': function(event) {
+      Session.set("activeThread", this._id);
+    }
+  })
+
+  Template.threadView.helpers({
+    'thread': function() {
+      var threadId = Session.get("activeThread");
+      return Threads.findOne({_id: threadId});
+    }
+  });
+
+  Accounts.ui.config({
+    passwordSignupFields: "USERNAME_ONLY"
   });
 }
 

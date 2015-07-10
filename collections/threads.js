@@ -13,6 +13,10 @@ Threads.attachSchema({
     type: String,
     label: "Created at"
   },
+  title: {
+    type: String,
+    label: "Title"
+  },
   content: {
     type: String,
     label: "Content"

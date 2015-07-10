@@ -3,12 +3,45 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{> loginButtons}}
+  {{#if currentUser}}
+    <h1>Meteor Forum</h1>
+    {{> newThread}}
+    {{> home}}
+  {{/if}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="newThread">
+  <form id="new-thread">
+    <input type="text" placeholder="Title">
+    <textarea type="text" placeholder="Content"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</template>
+
+<template name="home">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Replys / Views</th>
+      <th>Last Reply</th>
+    </tr>
+    {{#each threads}}
+      <tr class="thread-row">
+        <td>{{title}}</td>
+        <td>{{threadPosts}}</td>
+        <td>sup</td>
+      </tr>
+    {{/each}}
+  </table>
+
+  {{#if activeThread}}
+    {{> threadView}}
+  {{/if}}
+</template>
+
+<template name="threadView">
+  Title: {{thread.title}} by {{thread.author}}
+  <br>
+  {{thread.content}}
 </template>
