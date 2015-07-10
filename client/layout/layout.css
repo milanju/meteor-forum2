@@ -5,8 +5,12 @@ nav {
   background-color: #de4f4f;
 }
 
-.content-container{
+.content-container {
   margin-left: 10px;
   margin-right: 10px;
   width: auto;
+}
+
+.main-container {
+  min-width: 700px;
 }

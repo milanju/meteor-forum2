@@ -1,5 +1,8 @@
 <template name="thread">
-  {{title}} by {{author}} created at {{createdAt}}<br>
+  <h3>{{title}}</h3>
   <button class="edit-thread">Edit</button><br>
-  {{content}}
+  {{#each posts}}
+    {{> post}}
+  {{/each}}
+  {{> quickReply}}
 </template>

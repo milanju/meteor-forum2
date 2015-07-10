@@ -1,0 +1,21 @@
+.post-header {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatLeft div {
+  float: left;
+}
+
+.post-user {
+  width: 200px;
+  margin: 0;
+}
+
+.post-content {
+  margin: 0;
+}

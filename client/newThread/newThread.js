@@ -1,10 +1,3 @@
-Template.newThread.helpers({
-  'forumUrl': function() {
-    console.log(this);
-    return this.title.replace(" ", "-");
-  }
-});
-
 Template.newThread.events({
   'submit .new-thread-form': function(event, template) {
     var userId = Meteor.userId();
@@ -22,8 +15,18 @@ Template.newThread.events({
       author: author,
       createdAt: createdAt,
       title: title,
+    })
+
+    Posts.insert({
+      userId: userId,
+      forumId: forumId,
+      sectionId: sectionId,
+      threadId: threadId,
+      author: author,
+      createdAt: createdAt,
       content: content
     })
+
     var forumLink = Forums.findOne({_id: forumId}).title.replace(" ", "-");
     Router.go('/' + forumLink + '/' + threadId);
     return false;

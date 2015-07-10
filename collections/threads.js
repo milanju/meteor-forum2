@@ -25,8 +25,4 @@ Threads.attachSchema({
     type: String,
     label: "Title"
   },
-  content: {
-    type: String,
-    label: "Content"
-  }
 });
