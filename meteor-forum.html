@@ -1,16 +1,3 @@
-<head>
-  <title>meteor-forum</title>
-</head>
-
-<body>
-  {{> loginButtons}}
-  {{#if currentUser}}
-    <h1>Meteor Forum</h1>
-    {{> newThread}}
-    {{> home}}
-  {{/if}}
-</body>
-
 <template name="newThread">
   <form id="new-thread">
     <input type="text" placeholder="Title">
@@ -19,7 +6,7 @@
   </form>
 </template>
 
-<template name="home">
+<template name="homes">
   <table>
     <tr>
       <th>Title</th>

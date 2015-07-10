@@ -5,6 +5,14 @@ Posts.attachSchema({
     type: String,
     label: "User ID"
   },
+  forumId: {
+    type: String,
+    label: "Forum ID"
+  },
+  sectionId: {
+    type: String,
+    label: "Section ID"
+  },
   threadId: {
     type: String,
     label: "Thread ID"

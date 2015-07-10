@@ -22,7 +22,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.home.helpers({
+  Template.homes.helpers({
     'threads': function() {
       return Threads.find();
     },
@@ -34,7 +34,7 @@ if (Meteor.isClient) {
     }
   });
 
-  Template.home.events({
+  Template.homes.events({
     'click .thread-row': function(event) {
       Session.set("activeThread", this._id);
     }

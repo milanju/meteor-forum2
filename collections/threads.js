@@ -5,6 +5,14 @@ Threads.attachSchema({
     type: String,
     label: "User ID"
   },
+  forumId: {
+    type: String,
+    label: "Forum ID"
+  },
+  sectionId: {
+    type: String,
+    label: "Section ID"
+  },
   author: {
     type: String,
     label: "Author"
