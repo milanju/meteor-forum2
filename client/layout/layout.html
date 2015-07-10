@@ -13,6 +13,11 @@
       </nav>
       <div class="card">
         <div class="container content-container">
+          <div class="forum-navigation"><a href="/">Home</a>
+            {{#each navigation}}
+              -> <a href="/{{link}}">{{name}}</a>
+            {{/each}}
+          </div>
           {{> yield}}
         </div>
       </div>
