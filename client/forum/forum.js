@@ -4,6 +4,9 @@ Template.forum.helpers({
   },
   'link': function() {
     return Forums.findOne({_id: this.forumId}).title.replace(" ", "-");
+  },
+  'currentUrl': function() {
+    return Router.current().url;
   }
 });
 Template.forum.events({

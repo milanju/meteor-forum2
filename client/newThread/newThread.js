@@ -1,3 +1,10 @@
+Template.newThread.helpers({
+  'forumUrl': function() {
+    console.log(this);
+    return this.title.replace(" ", "-");
+  }
+});
+
 Template.newThread.events({
   'submit .new-thread-form': function(event, template) {
     var userId = Meteor.userId();

@@ -1,27 +1,25 @@
 <template name="section">
-  <div class="container table-container">
-    <div class="card table-card">
-      <table class="striped">
-        <thead>
-          <tr>
-            <th>{{title}}</th>
-            <th>Threads / Posts</th>
-            <th>Last Post</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each forums _id}}
-          <tr>
-            <td>
-              <a href="/{{link title}}">{{title}}</a> <br>
-              {{description}}
-            </td>
-            <td>//Threads / Posts</td>
-            <td>//Last Post</td>
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
-    </div>
+  <div class="card table-card">
+    <table class="striped">
+      <thead>
+        <tr>
+          <th>{{title}}</th>
+          <th>Threads / Posts</th>
+          <th>Last Post</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each forums _id}}
+        <tr>
+          <td>
+            <a href="/{{link title}}">{{title}}</a> <br>
+            {{description}}
+          </td>
+          <td>//Threads / Posts</td>
+          <td>//Last Post</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
   </div>
 </template>
