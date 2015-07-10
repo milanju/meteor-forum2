@@ -1,0 +1,27 @@
+<template name="forum">
+  {{title}}
+  <button class="new-thread">New Thread</button>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Replies / Views</th>
+      <th>Last Post</th>
+    </tr>
+    {{#each threads}}
+      <tr>
+        <td>
+          <a href="/{{link}}/{{_id}}">{{title}}</a><br>
+          Started by {{author}}, {{createdAt}}
+        </td>
+        <td>
+          (Replies)<br>
+          (Views)
+        </td>
+        <td>
+          (Last Post)<br>
+          (Last Post Date)
+        </td>
+      </tr>
+    {{/each}}
+  </table>
+</template>

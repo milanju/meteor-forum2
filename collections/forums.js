@@ -7,7 +7,8 @@ Forums.attachSchema({
   },
   title: {
     type: String,
-    label: "Title"
+    label: "Title",
+    unique: true
   },
   description: {
     type: String,

@@ -3,6 +3,6 @@ Template.section.helpers({
     return Forums.find({sectionId: id});
   },
   'link': function(title) {
-    return title.toLowerCase().replace(" ", "-");
+    return title.replace(" ", "-");
   }
 });
