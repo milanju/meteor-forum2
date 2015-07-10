@@ -18,6 +18,8 @@ Template.quickReply.events({
       content: content
     })
 
+    event.target.quickReplyContent.value = "";
+    
     return false;
   }
 });
