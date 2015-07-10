@@ -17,8 +17,8 @@ Template.newThread.events({
       title: title,
       content: content
     })
-
-    Router.go('/' + forumId + '/' + threadId);
+    var forumLink = Forums.findOne({_id: forumId}).title.replace(" ", "-");
+    Router.go('/' + forumLink + '/' + threadId);
     return false;
   }
 });

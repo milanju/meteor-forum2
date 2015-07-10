@@ -1,3 +1,7 @@
+Router.configure({
+  layoutTemplate: 'layout'
+});
+
 Router.route('/', function() {
   this.render('home');
 });
@@ -20,10 +24,18 @@ Router.route('/:forumTitle/new', function() {
   });
 });
 
-Router.route('/:forumTitle/:_id2', function() {
+Router.route('/:forumTitle/:_id', function() {
   this.render('thread', {
     data: function() {
-      return Threads.findOne({_id: this.params._id2});
+      return Threads.findOne({_id: this.params._id});
+    }
+  });
+});
+
+Router.route('/:forumTitle/:_id/edit', function() {
+  this.render('editThread', {
+    data: function() {
+      return Threads.findOne({_id: this.params._id});
     }
   });
 });
