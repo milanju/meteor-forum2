@@ -1,0 +1,19 @@
+<template name="section">
+  <table>
+    <tr>
+      <th>{{title}}</th>
+      <th>Threads / Posts</th>
+      <th>Last Post</th>
+    </tr>
+    {{#each forums _id}}
+    <tr>
+      <td>
+        <a href="/{{link title}}">{{title}}</a> <br>
+        {{description}}
+      </td>
+      <td>//Threads / Posts</td>
+      <td>//Last Post</td>
+    </tr>
+    {{/each}}
+  </table>
+</template>
