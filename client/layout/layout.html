@@ -13,6 +13,7 @@
       </nav>
       <div class="card main-card">
         <div class="container content-container">
+          {{> loginButtons}}
           <div class="forum-navigation"><a href="/">Home</a>
             {{#each navigation}}
               -> <a href="/{{link}}">{{name}}</a>
